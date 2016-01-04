@@ -18,6 +18,42 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    //uitabBarController
+    UITabBarController *tabBarVC = [[UITabBarController alloc]init];
+    //创建被管理的视图控制器
+    //主页
+    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *mainNav = mainSB.instantiateInitialViewController;
+    mainNav.tabBarItem.title = @"主页";
+    mainNav.tabBarItem.image = [UIImage imageNamed:@"53-house.png"];
+    /*
+     UIImage *selectImage = [UIImage imageNamed:@"53-house.png"];
+     
+     mainNav.tabBarItem.selectedImage = [selectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //规定图片显示位置，上左下右的顺序显示
+    mainNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+     
+     
+     */
+    
+    
+    UIStoryboard *discoverSB = [UIStoryboard storyboardWithName:@"Discover" bundle:nil];
+    UINavigationController *discoverNav = discoverSB.instantiateInitialViewController;
+    discoverNav.tabBarItem.title = @"发现";
+    discoverNav.tabBarItem.image = [UIImage imageNamed:@"71-compass.png"];
+    
+    UIStoryboard *mineSB = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+    UINavigationController *mineNav = mineSB.instantiateInitialViewController;
+    mineNav.tabBarItem.title = @"我";
+    mineNav.tabBarItem.image = [UIImage imageNamed:@"28-star.png"];
+    
+    //添加被管理的视图控制器
+    tabBarVC.viewControllers = @[mainNav,discoverNav,mineNav];
+    tabBarVC.tabBar.tintColor = [UIColor orangeColor];
+    tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
+    self.window.rootViewController = tabBarVC;
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
