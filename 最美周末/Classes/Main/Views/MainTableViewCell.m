@@ -7,7 +7,7 @@
 //
 
 #import "MainTableViewCell.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface MainTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *activityImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -20,6 +20,12 @@
 
 - (void)awakeFromNib {
     // Initialization code
+}
+- (void)setModel:(MainModel *)model{
+     [self.activityImageView sd_setImageWithURL:[NSURL URLWithString:model.image_big] placeholderImage:nil];
+    self.activityPriceLabel.text = model.price;
+    self.nameLabel.text = model.title;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
