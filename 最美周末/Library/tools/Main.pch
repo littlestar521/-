@@ -1,0 +1,27 @@
+//
+//  Main.pch
+//  最美周末
+//
+//  Created by scjy on 16/1/6.
+//  Copyright © 2016年 马娟娟. All rights reserved.
+//
+
+#ifndef Main_pch
+#define Main_pch
+
+#import "HWDefine.h"
+#import "UIViewController+Common.h"
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#ifdef DEBUG
+#	define MJJLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#	define MJJLog(...)
+#endif 
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Main_pch */

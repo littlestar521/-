@@ -8,6 +8,7 @@
 
 #import "MainTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "MainModel.h"
 @interface MainTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *activityImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -25,7 +26,11 @@
      [self.activityImageView sd_setImageWithURL:[NSURL URLWithString:model.image_big] placeholderImage:nil];
     self.activityPriceLabel.text = model.price;
     self.nameLabel.text = model.title;
-    
+    if ([model.type integerValue] != RecommendTypeActivity) {
+        self.activityDistanceBtn.hidden = YES;
+    }else{
+        self.activityDistanceBtn.hidden = NO;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
