@@ -8,9 +8,11 @@
 
 #import "ActivityDetailViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
-#import "MBProgressHUD.h"
-
+#import "ActivityView.h"
 @interface ActivityDetailViewController ()
+@property (strong, nonatomic) IBOutlet ActivityView *activitydetailView;
+
+
 
 @end
 
@@ -21,24 +23,26 @@
     // Do any additional setup after loading the view.
     self.title = @"活动详情";
     [self showBackBtn];
-    
     [self getModel];
 }
 #pragma mark ------ Custom Method
 - (void)getModel{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     [sessionManager GET:[NSString stringWithFormat:@"%@&id=%@",kActivityDetail,self.activityId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        MJJLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        MJJLog(@"%@",responseObject);
+        NSDictionary *dic = responseObject;
+        NSString *status = dic[@"status"];
+        NSInteger code = [dic[@"code"]integerValue];
+        if ([status isEqualToString:@"success"] && code == 0) {
+            NSDictionary *successDic = dic[@"success"];
+            self.activitydetailView.dataDic = successDic;
+        }else{
+            
+        
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        MJJLog(@"%@",error);
     }];
     
 }

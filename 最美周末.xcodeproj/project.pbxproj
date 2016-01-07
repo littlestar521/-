@@ -21,6 +21,7 @@
 		F39F80391C3CC07D003B9212 /* HotActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F80381C3CC07D003B9212 /* HotActivityViewController.m */; };
 		F39F80411C3D1B13003B9212 /* ActivityDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = F39F80401C3D1B13003B9212 /* ActivityDetail.plist */; };
 		F39F80441C3D2085003B9212 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F80431C3D2085003B9212 /* UIViewController+Common.m */; };
+		F3A8EE511C3E10E800137082 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A8EE501C3E10E800137082 /* ActivityView.m */; };
 		F3CDFDDF1C3A1C3200ECDA7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CDFDDE1C3A1C3200ECDA7C /* main.m */; };
 		F3CDFDE21C3A1C3200ECDA7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CDFDE11C3A1C3200ECDA7C /* AppDelegate.m */; };
 		F3CDFDE41C3A1C3200ECDA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CDFDE31C3A1C3200ECDA7C /* Assets.xcassets */; };
@@ -62,6 +63,8 @@
 		F39F80401C3D1B13003B9212 /* ActivityDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActivityDetail.plist; sourceTree = "<group>"; };
 		F39F80421C3D2085003B9212 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../../Classes/Main/Controller/UIViewController+Common.h"; sourceTree = "<group>"; };
 		F39F80431C3D2085003B9212 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../../Classes/Main/Controller/UIViewController+Common.m"; sourceTree = "<group>"; };
+		F3A8EE4F1C3E10E800137082 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
+		F3A8EE501C3E10E800137082 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
 		F3CDFDDA1C3A1C3200ECDA7C /* 最美周末.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "最美周末.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3CDFDDE1C3A1C3200ECDA7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3CDFDE01C3A1C3200ECDA7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				F3CDFE3F1C3A506B00ECDA7C /* Main.storyboard */,
+				F3A8EE4F1C3E10E800137082 /* ActivityView.h */,
+				F3A8EE501C3E10E800137082 /* ActivityView.m */,
 				F36FAEB01C3A767C00390961 /* MainTableViewCell.h */,
 				F36FAEB11C3A767C00390961 /* MainTableViewCell.m */,
 				F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */,
@@ -437,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36FAEB31C3A767C00390961 /* MainTableViewCell.m in Sources */,
+				F3A8EE511C3E10E800137082 /* ActivityView.m in Sources */,
 				F39F80391C3CC07D003B9212 /* HotActivityViewController.m in Sources */,
 				F3CDFDE21C3A1C3200ECDA7C /* AppDelegate.m in Sources */,
 				F39F80361C3CC06B003B9212 /* GoodActivityViewController.m in Sources */,

@@ -295,11 +295,16 @@
     }
     return _pageControll;
 }
+
+//点击广告
 - (void)touchADAction:(UIButton *)btn{
     //从数组中的字典里取出type类型
     NSString *type = self.adArray[btn.tag - 100][@"type"];
     if ([type integerValue] == 1) {
-        ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc]init];
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        ActivityDetailViewController *activityVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
+        //活动id
         activityVC.activityId = self.adArray[btn.tag - 100][@"id"];
         [self.navigationController pushViewController:activityVC animated:YES];
     }else{
