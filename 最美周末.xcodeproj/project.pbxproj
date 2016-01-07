@@ -12,7 +12,6 @@
 		F34943553F4559677BC84084 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C879D2E6B29165AAEF5204 /* libPods.a */; };
 		F36FAEB31C3A767C00390961 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F36FAEB11C3A767C00390961 /* MainTableViewCell.m */; };
 		F36FAEB41C3A767C00390961 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */; };
-		F39F80241C3CB7AC003B9212 /* pos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F39F80231C3CB7AC003B9212 /* pos@2x.png */; };
 		F39F80271C3CBC27003B9212 /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F80261C3CBC27003B9212 /* SelectCityViewController.m */; };
 		F39F802A1C3CBD9D003B9212 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F80291C3CBD9D003B9212 /* SearchViewController.m */; };
 		F39F802D1C3CBE6F003B9212 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F802C1C3CBE6F003B9212 /* ActivityDetailViewController.m */; };
@@ -46,7 +45,6 @@
 		F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		F39F80201C3CAECF003B9212 /* Main.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.pch; sourceTree = "<group>"; };
 		F39F80221C3CB36D003B9212 /* HWDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDefine.h; sourceTree = "<group>"; };
-		F39F80231C3CB7AC003B9212 /* pos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pos@2x.png"; sourceTree = "<group>"; };
 		F39F80251C3CBC27003B9212 /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectCityViewController.h; path = ../Views/SelectCityViewController.h; sourceTree = "<group>"; };
 		F39F80261C3CBC27003B9212 /* SelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectCityViewController.m; path = ../Views/SelectCityViewController.m; sourceTree = "<group>"; };
 		F39F80281C3CBD9D003B9212 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 		F3CDFE3E1C3A4FE300ECDA7C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F39F80231C3CB7AC003B9212 /* pos@2x.png */,
 				F31B49A51C3B8D49003BDB2F /* Main.plist */,
 				F39F80401C3D1B13003B9212 /* ActivityDetail.plist */,
 			);
@@ -377,7 +374,6 @@
 				F3CDFE401C3A506B00ECDA7C /* Main.storyboard in Resources */,
 				F3CDFE421C3A508200ECDA7C /* Discover.storyboard in Resources */,
 				F3CDFE441C3A509300ECDA7C /* Mine.storyboard in Resources */,
-				F39F80241C3CB7AC003B9212 /* pos@2x.png in Resources */,
 				F3CDFDE41C3A1C3200ECDA7C /* Assets.xcassets in Resources */,
 				F31B49A61C3B8D49003BDB2F /* Main.plist in Resources */,
 				F39F80411C3D1B13003B9212 /* ActivityDetail.plist in Resources */,

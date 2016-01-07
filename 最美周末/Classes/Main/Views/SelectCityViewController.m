@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title =  @"切换城市";
     self.view.backgroundColor = [UIColor yellowColor];
+    [self showBackBtn];
 }
 
 - (void)didReceiveMemoryWarning {

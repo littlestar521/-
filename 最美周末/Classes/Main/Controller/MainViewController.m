@@ -134,6 +134,7 @@
     [self activityBtn];
     [self themeBtn];
     
+    
     UIView *tableViewHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 343)];
     tableViewHeaderView.backgroundColor = [UIColor whiteColor];
     //添加图片
@@ -211,7 +212,7 @@
         }
         //刷新数据
         [self configTableViewHeaderView];
-        NSString *cityName = dic[@"cityName"];
+        NSString *cityName = dic[@"cityname"];
             //以请求回来的城市作为导航栏按钮标题
         self.navigationItem.leftBarButtonItem.title = cityName;
             
@@ -269,7 +270,7 @@
         self.activityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         self.activityBtn.frame = CGRectMake(0, 186, kScreenWidth / 2, 343 - 186 + kScreenWidth / 4);
         [self.activityBtn setImage:[UIImage imageNamed:@"home_huodong"] forState:UIControlStateNormal];
-        self.activityBtn.tag = 4;
+        self.activityBtn.tag = 104;
         [self.activityBtn addTarget:self action:@selector(mainActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _activityBtn;
@@ -279,7 +280,7 @@
         self.themeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         self.themeBtn.frame = CGRectMake(kScreenWidth / 2, 186, kScreenWidth / 2, 343 - 186 + kScreenWidth/ 4);
         [self.themeBtn setImage:[UIImage imageNamed:@"home_zhuanti"] forState:UIControlStateNormal];
-        self.themeBtn.tag = 5;
+        self.themeBtn.tag = 105;
         [self.themeBtn addTarget:self action:@selector(mainActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _themeBtn;
@@ -337,6 +338,7 @@
         {
             GoodActivityViewController *goodVC = [[GoodActivityViewController alloc]init];
             [self.navigationController pushViewController:goodVC animated:YES];
+            NSLog(@"%@",goodVC.navigationItem.leftBarButtonItem);
         }
             break;
         case 105:

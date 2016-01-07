@@ -13,12 +13,22 @@
 - (void)showBackBtn{
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(0, 0, 44, 44);
-    [backBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
     self.navigationItem.leftBarButtonItem = leftBarBtn;
 
 }
+
+//- (void)btn{
+//    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    rightBtn.frame = CGRectMake(0, 0, 44, 44);
+//    [rightBtn setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+//    [rightBtn addTarget:self action:@selector(rightBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+//    self.navigationItem.rightBarButtonItem = rightBarBtn;
+//}
+
 - (void)backBtnAction:(UIButton *)button{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
