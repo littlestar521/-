@@ -10,7 +10,13 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "ActivityView.h"
 @interface ActivityDetailViewController ()
+{
+
+    NSString *_phoneNumber;
+}
+
 @property (strong, nonatomic) IBOutlet ActivityView *activitydetailView;
+//@property(nonatomic,strong)
 
 
 
@@ -22,6 +28,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"活动详情";
+    //yincangtabBar
+    self.tabBarController.tabBar.hidden = YES;
+    //打电话
+    [self.activitydetailView.mapBtn addTarget:self action:@selector(makeMapAction:) forControlEvents:UIControlEventTouchUpInside];
+
+    //打电话
+    [self.activitydetailView.makeCallBtn addTarget:self action:@selector(makeCallBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+
     [self showBackBtn];
     [self getModel];
 }
@@ -38,6 +52,8 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *successDic = dic[@"success"];
             self.activitydetailView.dataDic = successDic;
+            
+            
         }else{
             
         
@@ -45,6 +61,22 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
     
+}
+//地图
+- (void)makeMapAction:(UIButton *)btn{
+
+}
+//打电话
+- (void)makeCallBtnAction:(UIButton *)btn{
+    //程序外打电话,打完电话之后不返回当前应用程序
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",_phoneNumber]]];
+    //程序内打电话,打完电话之后返回当前应用程序
+    UIWebView *cellPhoneWebView = [[UIWebView alloc] init];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _phoneNumber]]];
+    [cellPhoneWebView loadRequest:request];
+    [self.view addSubview:cellPhoneWebView];
+    
+
 }
 
 

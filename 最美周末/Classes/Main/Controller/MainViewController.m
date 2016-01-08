@@ -18,6 +18,7 @@
 #import "ClassfyViewController.h"
 #import "GoodActivityViewController.h"
 #import "HotActivityViewController.h"
+
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *listArray;//全部列表数据
@@ -30,7 +31,7 @@
 @property(nonatomic,strong)NSTimer *timer;
 @property(nonatomic,strong)UIButton *activityBtn;
 @property(nonatomic,strong)UIButton *themeBtn;
-
+@property(nonatomic,strong)UIView *tableViewHeaderView;
 
 @end
 
@@ -71,20 +72,20 @@
     }
     return self.themeArray.count;
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
-    return self.listArray.count;
-}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MainTableViewCell *mainCell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     NSMutableArray *array = self.listArray[indexPath.section];
-    MainModel *model = array[indexPath.row];
-    mainCell.model = model;
+    mainCell.model = array[indexPath.row];
     return mainCell;
 
 }
 
 #pragma mark------UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return self.listArray.count;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 203;
 }
@@ -108,9 +109,16 @@
     return view;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc]init];
+    if (indexPath.section == 0) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        ActivityDetailViewController *activityVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
+        //活动id
+        MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
+        
+        activityVC.activityId = mainModel.activityId;
         [self.navigationController pushViewController:activityVC animated:YES];
+        
     }else{
         ThemeViewController *themeVC = [[ThemeViewController alloc]init];
         [self.navigationController pushViewController:themeVC animated:YES];
@@ -118,25 +126,22 @@
     }
 }
 #pragma mark-------- Custom Method
+//选择城市
 - (void)selectCityAction:(UIBarButtonItem *)btn{
     SelectCityViewController *selectCityVC = [[SelectCityViewController alloc]init];
     [self.navigationController presentViewController:selectCityVC animated:YES completion:nil];
 
 }
+//搜索关键字
 - (void)searchActivityAction:(UIButton *)btn{
     SearchViewController *searchVC = [[SearchViewController alloc]init];
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 //自定义tableview头部
 - (void)configTableViewHeaderView{
-    [self carouseView];
-    [self pageControll];
-    [self activityBtn];
-    [self themeBtn];
     
-    
-    UIView *tableViewHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 343)];
-    tableViewHeaderView.backgroundColor = [UIColor whiteColor];
+    self.tableViewHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 343)];
+    self.tableViewHeaderView.backgroundColor = [UIColor whiteColor];
     //添加图片
     for (int i = 0; i < self.adArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(kScreenWidth*i, 0, kScreenWidth, 186)];
@@ -150,9 +155,9 @@
         [touchBtn addTarget:self action:@selector(touchADAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.carouseView addSubview:touchBtn];
     }
-    [tableViewHeaderView addSubview:self.carouseView];
+    [self.tableViewHeaderView addSubview:self.carouseView];
     self.pageControll.numberOfPages = self.adArray.count;
-    [tableViewHeaderView addSubview:self.pageControll];
+    [self.tableViewHeaderView addSubview:self.pageControll];
     
     //按钮
     for (int i = 0; i < 4; i++) {
@@ -161,23 +166,22 @@
         NSString *imageStr = [NSString stringWithFormat:@"home_icon_%d", i + 1];
         [btn setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
         btn.tag = 100 + i;
-        [btn addTarget:self action:@selector(mainActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [tableViewHeaderView addSubview:btn];
+        [btn addTarget:self action:@selector(mainActivity:) forControlEvents:UIControlEventTouchUpInside];
+        [self.tableViewHeaderView addSubview:btn];
     }
+    [self.tableViewHeaderView addSubview:self.activityBtn];
+    [self.tableViewHeaderView addSubview:self.themeBtn];
+    self.tableView.tableHeaderView = self.tableViewHeaderView;
     
-    [tableViewHeaderView addSubview:self.activityBtn];
-    [tableViewHeaderView addSubview:self.themeBtn];
-    self.tableView.tableHeaderView = tableViewHeaderView;
     
 }
 
-//网络请求
+//网络请求(包括解析plist)
 - (void)requestModel{
 
     AFHTTPSessionManager *sessionManage = [AFHTTPSessionManager manager];
     sessionManage.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [sessionManage GET:kMainDataList parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        MJJLog(@"%lld",downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultDic = responseObject;
         NSString *status = resultDic[@"status"];
@@ -191,7 +195,6 @@
             for (NSDictionary *dit in acDataArray) {
             MainModel *model = [[MainModel alloc]initWithDictionary:dit];
             [self.activityArray addObject:model];
-            
         }
         [self.listArray addObject:self.activityArray];
         //推荐专题
@@ -219,9 +222,7 @@
         }else{
         
         }
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        MJJLog(@"%@",error);
     }];
                   
 }
@@ -266,22 +267,25 @@
 }
 - (UIButton *)activityBtn{
     if (_activityBtn == nil) {
-        //精选活动&专门专题
+        //精选活动
         self.activityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.activityBtn.frame = CGRectMake(0, 186, kScreenWidth / 2, 343 - 186 + kScreenWidth / 4);
+        self.activityBtn.frame = CGRectMake(0, 186 + kScreenWidth / 4, kScreenWidth / 2, 343 - 186 - kScreenWidth / 4);
         [self.activityBtn setImage:[UIImage imageNamed:@"home_huodong"] forState:UIControlStateNormal];
-        self.activityBtn.tag = 104;
-        [self.activityBtn addTarget:self action:@selector(mainActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.activityBtn addTarget:self action:@selector(goodActivity:) forControlEvents:UIControlEventTouchUpInside];
+       
     }
     return _activityBtn;
 }
 - (UIButton *)themeBtn{
     if (_themeBtn == nil) {
+        //热门专题
         self.themeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.themeBtn.frame = CGRectMake(kScreenWidth / 2, 186, kScreenWidth / 2, 343 - 186 + kScreenWidth/ 4);
+        self.themeBtn.frame = CGRectMake(kScreenWidth / 2, 186 + kScreenWidth / 4, kScreenWidth / 2, 343 - 186 - kScreenWidth / 4);
         [self.themeBtn setImage:[UIImage imageNamed:@"home_zhuanti"] forState:UIControlStateNormal];
         self.themeBtn.tag = 105;
-        [self.themeBtn addTarget:self action:@selector(mainActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.themeBtn addTarget:self action:@selector(hotActivity:) forControlEvents:UIControlEventTouchUpInside];
+        
+        
     }
     return _themeBtn;
 }
@@ -312,52 +316,21 @@
         [self.navigationController pushViewController:hotVC animated:YES];
     }
 }
-#pragma mark ----- 四个按钮的实现方法
-- (void)mainActivityButtonAction:(UIButton *)btn{
-    switch (btn.tag) {
-        case 100:
-        {
-            ClassfyViewController *classfyVC = [[ClassfyViewController alloc]init];
-            [self.navigationController pushViewController:classfyVC animated:YES];
-        }
-            break;
-        case 101:
-        {
-            ClassfyViewController *classfyVC = [[ClassfyViewController alloc]init];
-            [self.navigationController pushViewController:classfyVC animated:YES];
-        }
-            break;
-        case 102:
-        {
-            ClassfyViewController *classfyVC = [[ClassfyViewController alloc]init];
-            [self.navigationController pushViewController:classfyVC animated:YES];
-        }
-            break;
-        case 103:
-        {
-            ClassfyViewController *classfyVC = [[ClassfyViewController alloc]init];
-            [self.navigationController pushViewController:classfyVC animated:YES];
-        }
-            break;
-        case 104:
-        {
-            GoodActivityViewController *goodVC = [[GoodActivityViewController alloc]init];
-            [self.navigationController pushViewController:goodVC animated:YES];
-            NSLog(@"%@",goodVC.navigationItem.leftBarButtonItem);
-        }
-            break;
-        case 105:
-        {
-            HotActivityViewController *hotVC = [[HotActivityViewController alloc]init];
-            [self.navigationController pushViewController:hotVC animated:YES];
-        }
-            break;
-            
-        default:
-            break;
-    }
-}
+#pragma mark ----- 六个按钮的实现方法
 
+- (void)mainActivity:(UIButton *)btn{
+    ClassfyViewController *classfyVC = [[ClassfyViewController alloc]init];
+    [self.navigationController pushViewController:classfyVC animated:YES];
+}
+- (void)hotActivity:(UIButton *)btn{
+    HotActivityViewController *hotVC = [[HotActivityViewController alloc]init];
+    [self.navigationController pushViewController:hotVC animated:YES];
+}
+- (void)goodActivity:(UIButton *)btn{
+    GoodActivityViewController *goodVC = [[GoodActivityViewController alloc]init];
+    [self.navigationController pushViewController:goodVC animated:YES];
+
+}
 
 #pragma mark ------首页轮播图
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -385,17 +358,20 @@
     if (_timer != nil) {
         return;
     }
-    self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(rollAnimation) userInfo:nil repeats:YES];
+    self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(rollAnimation) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 //每两秒执行一次,图片自动轮播
 - (void)rollAnimation{
+    //sel数组个数可能为0，当对0取余时没有意义
     //把page当前页+1
-    NSInteger rollPage = (self.pageControll.currentPage + 1) % self.adArray.count;
-    self.pageControll.currentPage = rollPage;
-    //计算scollView应该滚动的坐标
-    CGFloat offsetX = self.pageControll.currentPage*kScreenWidth;
-    [self.carouseView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    if (self.adArray.count > 0) {
+        NSInteger rollPage = (self.pageControll.currentPage + 1) % self.adArray.count;
+        self.pageControll.currentPage = rollPage;
+        //计算scollView应该滚动的坐标
+        CGFloat offsetX = self.pageControll.currentPage*kScreenWidth;
+        [self.carouseView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    }
 }
 
 //当scollView是手动滑动的时候，定时器依然在计算时间，可能我们刚刚滑到下一页，导致在当前页停留的时间不够两秒。

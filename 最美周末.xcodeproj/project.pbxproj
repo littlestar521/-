@@ -12,6 +12,8 @@
 		F34943553F4559677BC84084 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C879D2E6B29165AAEF5204 /* libPods.a */; };
 		F36FAEB31C3A767C00390961 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F36FAEB11C3A767C00390961 /* MainTableViewCell.m */; };
 		F36FAEB41C3A767C00390961 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */; };
+		F39D49DC1C3E4C42002B12B5 /* HWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F39D49DB1C3E4C42002B12B5 /* HWTools.m */; };
+		F39D49DF1C3E5B17002B12B5 /* UIView+Extesion.m in Sources */ = {isa = PBXBuildFile; fileRef = F39D49DE1C3E5B17002B12B5 /* UIView+Extesion.m */; };
 		F39F80271C3CBC27003B9212 /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F80261C3CBC27003B9212 /* SelectCityViewController.m */; };
 		F39F802A1C3CBD9D003B9212 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F80291C3CBD9D003B9212 /* SearchViewController.m */; };
 		F39F802D1C3CBE6F003B9212 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F802C1C3CBE6F003B9212 /* ActivityDetailViewController.m */; };
@@ -38,12 +40,16 @@
 		473CA0BCF906FDE37D28A026 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		87C879D2E6B29165AAEF5204 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF24AFDE9D41F184091649 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F31B49A51C3B8D49003BDB2F /* Main.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Main.plist; sourceTree = "<group>"; };
+		F31B49A51C3B8D49003BDB2F /* Main.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = Main.plist; path = ../../../Resources/Main.plist; sourceTree = "<group>"; };
 		F31B49A71C3BA07D003BDB2F /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		F31B49A81C3BA07D003BDB2F /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		F36FAEB01C3A767C00390961 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		F36FAEB11C3A767C00390961 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		F39D49DA1C3E4C42002B12B5 /* HWTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTools.h; sourceTree = "<group>"; };
+		F39D49DB1C3E4C42002B12B5 /* HWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTools.m; sourceTree = "<group>"; };
+		F39D49DD1C3E5B17002B12B5 /* UIView+Extesion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extesion.h"; sourceTree = "<group>"; };
+		F39D49DE1C3E5B17002B12B5 /* UIView+Extesion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extesion.m"; sourceTree = "<group>"; };
 		F39F80201C3CAECF003B9212 /* Main.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.pch; sourceTree = "<group>"; };
 		F39F80221C3CB36D003B9212 /* HWDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDefine.h; sourceTree = "<group>"; };
 		F39F80251C3CBC27003B9212 /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectCityViewController.h; path = ../Views/SelectCityViewController.h; sourceTree = "<group>"; };
@@ -60,7 +66,7 @@
 		F39F80351C3CC06B003B9212 /* GoodActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodActivityViewController.m; sourceTree = "<group>"; };
 		F39F80371C3CC07D003B9212 /* HotActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotActivityViewController.h; sourceTree = "<group>"; };
 		F39F80381C3CC07D003B9212 /* HotActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotActivityViewController.m; sourceTree = "<group>"; };
-		F39F80401C3D1B13003B9212 /* ActivityDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ActivityDetail.plist; sourceTree = "<group>"; };
+		F39F80401C3D1B13003B9212 /* ActivityDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = ActivityDetail.plist; path = ../../../Resources/ActivityDetail.plist; sourceTree = "<group>"; };
 		F39F80421C3D2085003B9212 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../../Classes/Main/Controller/UIViewController+Common.h"; sourceTree = "<group>"; };
 		F39F80431C3D2085003B9212 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../../Classes/Main/Controller/UIViewController+Common.m"; sourceTree = "<group>"; };
 		F3A8EE4F1C3E10E800137082 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
@@ -119,6 +125,10 @@
 				F39F80221C3CB36D003B9212 /* HWDefine.h */,
 				F39F80421C3D2085003B9212 /* UIViewController+Common.h */,
 				F39F80431C3D2085003B9212 /* UIViewController+Common.m */,
+				F39D49DA1C3E4C42002B12B5 /* HWTools.h */,
+				F39D49DB1C3E4C42002B12B5 /* HWTools.m */,
+				F39D49DD1C3E5B17002B12B5 /* UIView+Extesion.h */,
+				F39D49DE1C3E5B17002B12B5 /* UIView+Extesion.m */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -245,6 +255,8 @@
 		F3CDFE321C3A4DC600ECDA7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F31B49A51C3B8D49003BDB2F /* Main.plist */,
+				F39F80401C3D1B13003B9212 /* ActivityDetail.plist */,
 				F31B49A71C3BA07D003BDB2F /* MainModel.h */,
 				F31B49A81C3BA07D003BDB2F /* MainModel.m */,
 			);
@@ -309,8 +321,6 @@
 		F3CDFE3E1C3A4FE300ECDA7C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F31B49A51C3B8D49003BDB2F /* Main.plist */,
-				F39F80401C3D1B13003B9212 /* ActivityDetail.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -441,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39D49DC1C3E4C42002B12B5 /* HWTools.m in Sources */,
 				F36FAEB31C3A767C00390961 /* MainTableViewCell.m in Sources */,
 				F3A8EE511C3E10E800137082 /* ActivityView.m in Sources */,
 				F39F80391C3CC07D003B9212 /* HotActivityViewController.m in Sources */,
@@ -455,6 +466,7 @@
 				F3CDFDDF1C3A1C3200ECDA7C /* main.m in Sources */,
 				F39F80271C3CBC27003B9212 /* SelectCityViewController.m in Sources */,
 				F3CDFE3B1C3A4DC600ECDA7C /* MainViewController.m in Sources */,
+				F39D49DF1C3E5B17002B12B5 /* UIView+Extesion.m in Sources */,
 				F39F80441C3D2085003B9212 /* UIViewController+Common.m in Sources */,
 				F31B49A91C3BA07D003BDB2F /* MainModel.m in Sources */,
 			);

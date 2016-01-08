@@ -18,8 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    //uitabBarController
-    UITabBarController *tabBarVC = [[UITabBarController alloc]init];
+    //self.self.tabBarVC
+    self.tabBarVC = [[UITabBarController alloc]init];
     //创建被管理的视图控制器
     //主页
     UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -48,10 +48,10 @@
     mineNav.tabBarItem.image = [UIImage imageNamed:@"28-star.png"];
     
     //添加被管理的视图控制器
-    tabBarVC.viewControllers = @[mainNav,discoverNav,mineNav];
-    tabBarVC.tabBar.tintColor = [UIColor orangeColor];
-    tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
-    self.window.rootViewController = tabBarVC;
+    self.tabBarVC.viewControllers = @[mainNav,discoverNav,mineNav];
+    self.self.tabBarVC.tabBar.tintColor = [UIColor orangeColor];
+    self.self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
+    self.window.rootViewController = self.tabBarVC;
     
     
     self.window.backgroundColor = [UIColor whiteColor];

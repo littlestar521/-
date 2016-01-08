@@ -56,24 +56,21 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-PQ-6Tj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活动起止时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUX-tw-pFN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活动起止时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUX-tw-pFN" userLabel="Actiovity Time Label">
                                         <rect key="frame" x="19" y="222" width="220" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.95295234809999996" green="0.34166931740000001" blue="0.29283127990000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活动标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ig-Ob-ull">
                                         <rect key="frame" x="19" y="187" width="356" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="siW-iD-GoL">
-                                        <rect key="frame" x="0.0" y="269" width="375" height="1"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已喜欢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3R-qY-3W2">
                                         <rect key="frame" x="288" y="222" width="87" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -117,8 +114,8 @@
                                         <rect key="frame" x="19" y="350" width="350" height="30"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参考价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrF-CL-Wbn">
-                                        <rect key="frame" x="19" y="269" width="356" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="19" y="261" width="356" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -137,6 +134,9 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ac_details_img" translatesAutoresizingMaskIntoConstraints="NO" id="ahT-wZ-bOg">
                                         <rect key="frame" x="19" y="412" width="25" height="22"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="siW-iD-GoL">
+                                        <rect key="frame" x="0.0" y="252" width="375" height="1"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -146,7 +146,7 @@
                             <outlet property="activityLabel" destination="6Ig-Ob-ull" id="2An-2T-k5u"/>
                             <outlet property="activityPhoneLabel" destination="th6-c3-jgF" id="nnR-KU-dp6"/>
                             <outlet property="activityPriceLabel" destination="QrF-CL-Wbn" id="Rbv-2f-YUm"/>
-                            <outlet property="activityTimeLabel" destination="mUX-tw-pFN" id="eJ1-0e-J2X"/>
+                            <outlet property="activityTimeLabel" destination="mUX-tw-pFN" id="bjd-0d-42m"/>
                             <outlet property="favouriteLabel" destination="Y3R-qY-3W2" id="3QS-yk-MSJ"/>
                             <outlet property="headImageView" destination="6wU-PQ-6Tj" id="fZ5-DY-O5F"/>
                             <outlet property="mainScrollView" destination="H6l-Jx-9wg" id="a1w-pQ-36y"/>
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCV-Tn-EzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105.5" y="379.5"/>
+            <point key="canvasLocation" x="1100.5" y="384.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="on7-My-hL4">
