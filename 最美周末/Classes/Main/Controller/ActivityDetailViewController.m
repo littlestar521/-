@@ -1,7 +1,7 @@
 //
 //  ActivityDetailViewController.m
 //  最美周末
-//
+//  活动详情
 //  Created by scjy on 16/1/6.
 //  Copyright © 2016年 马娟娟. All rights reserved.
 //
@@ -28,9 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"活动详情";
-    //yincangtabBar
+    //隐藏tabBar
     self.tabBarController.tabBar.hidden = YES;
-    //打电话
+    //地图
     [self.activitydetailView.mapBtn addTarget:self action:@selector(makeMapAction:) forControlEvents:UIControlEventTouchUpInside];
 
     //打电话
@@ -52,10 +52,7 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *successDic = dic[@"success"];
             self.activitydetailView.dataDic = successDic;
-            
-            
         }else{
-            
         
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

@@ -17,4 +17,6 @@
 #pragma mark ------ 根据文字最大显示宽高和文字内容返回文字高度
 + (CGFloat )getTextHeightWithText:(NSString *)text bigestSize:(CGSize)bigSize textFont:(CGFloat)textFont;
 
++ (NSDate *)getSystemNowDate;
+
 @end

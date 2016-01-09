@@ -18,9 +18,9 @@ typedef enum {
 @property(nonatomic,copy)NSString *image_big;//首页大图
 @property(nonatomic,copy)NSString *title;//标题
 @property(nonatomic,copy)NSString *price;//价格
-@property(nonatomic,assign)CGFloat lat;//精度
+@property(nonatomic,assign)CGFloat lat;//经度
 @property(nonatomic,assign)CGFloat lng;//纬度
-@property(nonatomic,assign)NSString *address;//地址
+@property(nonatomic,copy)NSString *address;//地址
 @property(nonatomic,copy)NSString *counts;//次数
 @property(nonatomic,copy)NSString *startTime;//开始时间
 @property(nonatomic,copy)NSString *endTime;//结束时间

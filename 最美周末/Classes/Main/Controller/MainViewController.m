@@ -54,16 +54,21 @@
     UIBarButtonItem *rightBarbtn = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     self.navigationItem.rightBarButtonItem = rightBarbtn;
     
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    self.tabBarController.tabBar.hidden = YES;
+
     [self configTableViewHeaderView];
     //网络请求
-    [self requestModel];
+//    [self requestModel];
     //启动定时器
     [self startTimer];
     
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
 }
 #pragma mark------UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -109,18 +114,19 @@
     return view;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //活动id
+    MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
     if (indexPath.section == 0) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
         ActivityDetailViewController *activityVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
-        //活动id
-        MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
         
         activityVC.activityId = mainModel.activityId;
         [self.navigationController pushViewController:activityVC animated:YES];
         
     }else{
         ThemeViewController *themeVC = [[ThemeViewController alloc]init];
+        themeVC.themeId = mainModel.activityId;
         [self.navigationController pushViewController:themeVC animated:YES];
     
     }
@@ -312,8 +318,9 @@
         activityVC.activityId = self.adArray[btn.tag - 100][@"id"];
         [self.navigationController pushViewController:activityVC animated:YES];
     }else{
-        HotActivityViewController *hotVC = [[HotActivityViewController alloc]init];
-        [self.navigationController pushViewController:hotVC animated:YES];
+        ThemeViewController *themeVC = [[ThemeViewController alloc]init];
+        themeVC.themeId = self.adArray[btn.tag - 100][@"id"];
+        [self.navigationController pushViewController:themeVC animated:YES];
     }
 }
 #pragma mark ----- 六个按钮的实现方法
@@ -324,10 +331,12 @@
 }
 - (void)hotActivity:(UIButton *)btn{
     HotActivityViewController *hotVC = [[HotActivityViewController alloc]init];
+    self.tabBarController.tabBar.hidden = YES;
     [self.navigationController pushViewController:hotVC animated:YES];
 }
 - (void)goodActivity:(UIButton *)btn{
     GoodActivityViewController *goodVC = [[GoodActivityViewController alloc]init];
+    self.tabBarController.tabBar.hidden = YES;
     [self.navigationController pushViewController:goodVC animated:YES];
 
 }

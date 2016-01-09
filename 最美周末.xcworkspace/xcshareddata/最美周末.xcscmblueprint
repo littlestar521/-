@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3232F7B6C89DBB2E37F4727866E3A7C3AA063B8A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3232F7B6C89DBB2E37F4727866E3A7C3AA063B8A" : 0,
+    "6CB463215409B8F9B92D57A811B5EFBFFE8BE632" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E6C83E4A-E7CF-46CD-AB3A-98F7B7193916",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3232F7B6C89DBB2E37F4727866E3A7C3AA063B8A" : "%E6%9C%80%E7%BE%8E%E5%91%A8%E6%9C%AB\/",
+    "6CB463215409B8F9B92D57A811B5EFBFFE8BE632" : "%E6%9C%80%E7%BE%8E%E5%91%A8%E6%9C%AB\/%E6%9C%80%E7%BE%8E%E5%91%A8%E6%9C%AB\/Library\/PullingRefreshTableView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "最美周末",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "最美周末.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:littlestar521\/-.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3232F7B6C89DBB2E37F4727866E3A7C3AA063B8A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Zhangmangyuan\/PullingRefreshTableView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6CB463215409B8F9B92D57A811B5EFBFFE8BE632"
+    }
+  ]
+}
