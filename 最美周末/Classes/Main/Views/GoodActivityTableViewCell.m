@@ -28,7 +28,6 @@
 }
 - (void)setGoodModel:(GoodActivityModel *)goodModel{
     
-//    NSLog(@"%@",goodModel.title);
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:goodModel.image] placeholderImage:nil];
     self.ageLabel.text = goodModel.age;
     self.loveCountLabel.text = [NSString stringWithFormat:@"%@", goodModel.counts];

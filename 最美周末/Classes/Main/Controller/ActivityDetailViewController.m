@@ -53,7 +53,7 @@
             NSDictionary *successDic = dic[@"success"];
             self.activitydetailView.dataDic = successDic;
         }else{
-        
+            
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];

@@ -292,14 +292,14 @@
 		F3CDFE331C3A4DC600ECDA7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F3C1865B1C410B010045E19F /* GoodActivityTableViewCell.h */,
-				F3C1865C1C410B010045E19F /* GoodActivityTableViewCell.m */,
-				F3C1865D1C410B010045E19F /* GoodActivityTableViewCell.xib */,
 				F3CDFE3F1C3A506B00ECDA7C /* Main.storyboard */,
 				F3A8EE4F1C3E10E800137082 /* ActivityView.h */,
 				F3A8EE501C3E10E800137082 /* ActivityView.m */,
 				F30BC2A51C3F5ECD00B24E57 /* ActivityThemeView.h */,
 				F30BC2A61C3F5ECD00B24E57 /* ActivityThemeView.m */,
+				F3C1865B1C410B010045E19F /* GoodActivityTableViewCell.h */,
+				F3C1865C1C410B010045E19F /* GoodActivityTableViewCell.m */,
+				F3C1865D1C410B010045E19F /* GoodActivityTableViewCell.xib */,
 				F36FAEB01C3A767C00390961 /* MainTableViewCell.h */,
 				F36FAEB11C3A767C00390961 /* MainTableViewCell.m */,
 				F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */,

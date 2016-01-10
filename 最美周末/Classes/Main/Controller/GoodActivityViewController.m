@@ -50,8 +50,6 @@
     return goodCell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-   
-    
     return self.acArray.count;
 }
 
@@ -62,6 +60,7 @@
     GoodActivityModel *goodActivityModel = self.acArray[indexPath.row];
     activityVC.activityId = goodActivityModel.activityId;
     [self.navigationController pushViewController:activityVC animated:YES];
+    
 }
 #pragma mark--------PullingRefreshDelagate
 //tableView下拉刷新开始时调用
@@ -92,16 +91,12 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *dic = resultDic[@"success"];
             NSArray *acDataArray = dic[@"acData"];
-//            MJJLog(@"8888888888  =  %@",acDataArray);
             self.acArray = [NSMutableArray new];
             for (NSDictionary *dit in acDataArray) {
                 GoodActivityModel *model = [[GoodActivityModel alloc]initWithDictionary:dit];
                 [self.acArray addObject:model];
-
             }
-                MJJLog(@"%lu",self.acArray.count);
             [self.tableView reloadData];
-
         }
 //        MJJLog(@"%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
