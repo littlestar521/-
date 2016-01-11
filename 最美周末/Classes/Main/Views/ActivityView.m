@@ -61,6 +61,8 @@
     self.activityAddressLabel.text = dataDic[@"address"];
     //活动详情
     [self drawContentWithArray:dataDic[@"content"]];
+    //拿到数据后，重新设置mainScrollView高度
+    self.mainScrollView.contentSize = CGSizeMake(kScreenWidth, _lastLabelBottom);
 
 }
 

@@ -31,7 +31,7 @@
 }
 
 - (void)configView{
-    self.mainScrollView.contentSize = CGSizeMake(kScreenWidth, 5000);
+    self.mainScrollView.contentSize = CGSizeMake(kScreenWidth, 6000);
     [self addSubview: self.mainScrollView];
     [self.mainScrollView addSubview:self.headImageView];
 }
@@ -41,6 +41,7 @@
     
     //活动详情
     [self drawContentWithArray:dataDic[@"content"]];
+    self.mainScrollView.contentSize = CGSizeMake(kScreenWidth, _lastLabelBottom+186+70);
 }
 - (UIScrollView *)mainScrollView{
     if (_mainScrollView == nil) {
