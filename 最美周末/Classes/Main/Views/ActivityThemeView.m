@@ -31,32 +31,26 @@
 }
 
 - (void)configView{
-    
+    self.mainScrollView.contentSize = CGSizeMake(kScreenWidth, 5000);
     [self addSubview: self.mainScrollView];
     [self.mainScrollView addSubview:self.headImageView];
-    
-
 }
 //在set方法中赋值
 - (void)setDataDic:(NSDictionary *)dataDic{
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:dataDic[@"image"]] placeholderImage:nil];
-//    MJJLog(@"`````%@",dataDic[@"image"]);
     
     //活动详情
     [self drawContentWithArray:dataDic[@"content"]];
-    MJJLog(@"%@",dataDic[@"content"]);
 }
 - (UIScrollView *)mainScrollView{
     if (_mainScrollView == nil) {
         self.mainScrollView = [[UIScrollView alloc]initWithFrame:self.frame ];
-        self.mainScrollView.contentSize = CGSizeMake(kScreenWidth, 5000);
-        
     }
     return _mainScrollView;
 }
 - (UIImageView *)headImageView{
-    if (_headImageView) {
-        self.headImageView = [[UIImageView alloc]initWithFrame:self.frame];
+    if (_headImageView == nil) {
+        self.headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, kScreenWidth - 20, 180)];
         
     }
     return _headImageView;
@@ -66,7 +60,6 @@
 - (void)drawContentWithArray:(NSArray *)contentArray{
     
     for (NSDictionary *dic in contentArray) {
-        
         //每一段活动信息
         CGFloat height = [HWTools getTextHeightWithText:dic[@"description"] bigestSize:CGSizeMake(kScreenWidth, 1000) textFont:15.0];
         CGFloat y;

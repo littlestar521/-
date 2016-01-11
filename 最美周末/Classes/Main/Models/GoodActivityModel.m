@@ -18,7 +18,7 @@
         self.age = dict[@"age"];
         self.counts = dict[@"counts"];
         self.price = dict[@"price"];
-        self.activityId = dict[@"activityId"];
+        self.activityId = dict[@"id"];
         self.address = dict[@"address"];
         self.type = dict[@"type"];
 //        self.lat = [dict[@"lat"] floatValue];

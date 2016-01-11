@@ -30,6 +30,6 @@
 //}
 
 - (void)backBtnAction:(UIButton *)button{
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

@@ -16,6 +16,10 @@
 		F36FAEB41C3A767C00390961 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */; };
 		F39D49DC1C3E4C42002B12B5 /* HWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F39D49DB1C3E4C42002B12B5 /* HWTools.m */; };
 		F39D49DF1C3E5B17002B12B5 /* UIView+Extesion.m in Sources */ = {isa = PBXBuildFile; fileRef = F39D49DE1C3E5B17002B12B5 /* UIView+Extesion.m */; };
+		F39F3BAE1C423423008BA3B9 /* HotThemeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F3BAC1C423423008BA3B9 /* HotThemeTableViewCell.m */; };
+		F39F3BAF1C423423008BA3B9 /* HotThemeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F39F3BAD1C423423008BA3B9 /* HotThemeTableViewCell.xib */; };
+		F39F3BB21C4235BA008BA3B9 /* HotThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F3BB11C4235BA008BA3B9 /* HotThemeModel.m */; };
+		F39F3BB41C42522E008BA3B9 /* HotTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = F39F3BB31C42522E008BA3B9 /* HotTheme.plist */; };
 		F39F80271C3CBC27003B9212 /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F80261C3CBC27003B9212 /* SelectCityViewController.m */; };
 		F39F802A1C3CBD9D003B9212 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F80291C3CBD9D003B9212 /* SearchViewController.m */; };
 		F39F802D1C3CBE6F003B9212 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39F802C1C3CBE6F003B9212 /* ActivityDetailViewController.m */; };
@@ -62,6 +66,12 @@
 		F39D49DB1C3E4C42002B12B5 /* HWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTools.m; sourceTree = "<group>"; };
 		F39D49DD1C3E5B17002B12B5 /* UIView+Extesion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extesion.h"; sourceTree = "<group>"; };
 		F39D49DE1C3E5B17002B12B5 /* UIView+Extesion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extesion.m"; sourceTree = "<group>"; };
+		F39F3BAB1C423423008BA3B9 /* HotThemeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotThemeTableViewCell.h; sourceTree = "<group>"; };
+		F39F3BAC1C423423008BA3B9 /* HotThemeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotThemeTableViewCell.m; sourceTree = "<group>"; };
+		F39F3BAD1C423423008BA3B9 /* HotThemeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotThemeTableViewCell.xib; sourceTree = "<group>"; };
+		F39F3BB01C4235BA008BA3B9 /* HotThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotThemeModel.h; sourceTree = "<group>"; };
+		F39F3BB11C4235BA008BA3B9 /* HotThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotThemeModel.m; sourceTree = "<group>"; };
+		F39F3BB31C42522E008BA3B9 /* HotTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HotTheme.plist; sourceTree = "<group>"; };
 		F39F80201C3CAECF003B9212 /* Main.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.pch; sourceTree = "<group>"; };
 		F39F80221C3CB36D003B9212 /* HWDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDefine.h; sourceTree = "<group>"; };
 		F39F80251C3CBC27003B9212 /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectCityViewController.h; path = ../Views/SelectCityViewController.h; sourceTree = "<group>"; };
@@ -281,8 +291,11 @@
 				F39F80401C3D1B13003B9212 /* ActivityDetail.plist */,
 				F30BC2A31C3F5D5800B24E57 /* ActivityTheme.plist */,
 				F3F7DFD81C3FC2270077546A /* good.plist */,
+				F39F3BB31C42522E008BA3B9 /* HotTheme.plist */,
 				F3F7DFD51C3FBE610077546A /* GoodActivityModel.h */,
 				F3F7DFD61C3FBE610077546A /* GoodActivityModel.m */,
+				F39F3BB01C4235BA008BA3B9 /* HotThemeModel.h */,
+				F39F3BB11C4235BA008BA3B9 /* HotThemeModel.m */,
 				F31B49A71C3BA07D003BDB2F /* MainModel.h */,
 				F31B49A81C3BA07D003BDB2F /* MainModel.m */,
 			);
@@ -300,6 +313,9 @@
 				F3C1865B1C410B010045E19F /* GoodActivityTableViewCell.h */,
 				F3C1865C1C410B010045E19F /* GoodActivityTableViewCell.m */,
 				F3C1865D1C410B010045E19F /* GoodActivityTableViewCell.xib */,
+				F39F3BAB1C423423008BA3B9 /* HotThemeTableViewCell.h */,
+				F39F3BAC1C423423008BA3B9 /* HotThemeTableViewCell.m */,
+				F39F3BAD1C423423008BA3B9 /* HotThemeTableViewCell.xib */,
 				F36FAEB01C3A767C00390961 /* MainTableViewCell.h */,
 				F36FAEB11C3A767C00390961 /* MainTableViewCell.m */,
 				F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */,
@@ -429,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36FAEB41C3A767C00390961 /* MainTableViewCell.xib in Resources */,
+				F39F3BB41C42522E008BA3B9 /* HotTheme.plist in Resources */,
 				F3CDFE401C3A506B00ECDA7C /* Main.storyboard in Resources */,
 				F3CDFE421C3A508200ECDA7C /* Discover.storyboard in Resources */,
 				F3F7DFD91C3FC2270077546A /* good.plist in Resources */,
@@ -439,6 +456,7 @@
 				F31B49A61C3B8D49003BDB2F /* Main.plist in Resources */,
 				F3F544191C3FA0C600B0C1E8 /* blueArrow.png in Resources */,
 				F39F80411C3D1B13003B9212 /* ActivityDetail.plist in Resources */,
+				F39F3BAF1C423423008BA3B9 /* HotThemeTableViewCell.xib in Resources */,
 				F3CDFDE71C3A1C3200ECDA7C /* LaunchScreen.storyboard in Resources */,
 				F3C1865F1C410B010045E19F /* GoodActivityTableViewCell.xib in Resources */,
 			);
@@ -515,6 +533,8 @@
 				F39F80301C3CBF43003B9212 /* ThemeViewController.m in Sources */,
 				F3F5441B1C3FA0C600B0C1E8 /* PullingRefreshTableView.m in Sources */,
 				F3CDFDDF1C3A1C3200ECDA7C /* main.m in Sources */,
+				F39F3BAE1C423423008BA3B9 /* HotThemeTableViewCell.m in Sources */,
+				F39F3BB21C4235BA008BA3B9 /* HotThemeModel.m in Sources */,
 				F39F80271C3CBC27003B9212 /* SelectCityViewController.m in Sources */,
 				F3CDFE3B1C3A4DC600ECDA7C /* MainViewController.m in Sources */,
 				F39D49DF1C3E5B17002B12B5 /* UIView+Extesion.m in Sources */,
