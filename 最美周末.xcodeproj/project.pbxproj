@@ -12,6 +12,10 @@
 		F31B49A61C3B8D49003BDB2F /* Main.plist in Resources */ = {isa = PBXBuildFile; fileRef = F31B49A51C3B8D49003BDB2F /* Main.plist */; };
 		F31B49A91C3BA07D003BDB2F /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F31B49A81C3BA07D003BDB2F /* MainModel.m */; };
 		F34943553F4559677BC84084 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C879D2E6B29165AAEF5204 /* libPods.a */; };
+		F360C5111C43913100CBB1DC /* VOContentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F360C50A1C43913100CBB1DC /* VOContentLayer.m */; };
+		F360C5121C43913100CBB1DC /* VOIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F360C50C1C43913100CBB1DC /* VOIndicatorAnimation.m */; };
+		F360C5131C43913100CBB1DC /* VOSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = F360C50E1C43913100CBB1DC /* VOSegment.m */; };
+		F360C5141C43913100CBB1DC /* VOSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F360C5101C43913100CBB1DC /* VOSegmentedControl.m */; };
 		F36FAEB31C3A767C00390961 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F36FAEB11C3A767C00390961 /* MainTableViewCell.m */; };
 		F36FAEB41C3A767C00390961 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */; };
 		F39D49DC1C3E4C42002B12B5 /* HWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F39D49DB1C3E4C42002B12B5 /* HWTools.m */; };
@@ -47,6 +51,10 @@
 		F3F5441B1C3FA0C600B0C1E8 /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F544181C3FA0C600B0C1E8 /* PullingRefreshTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F3F7DFD71C3FBE610077546A /* GoodActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F7DFD61C3FBE610077546A /* GoodActivityModel.m */; };
 		F3F7DFD91C3FC2270077546A /* good.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3F7DFD81C3FC2270077546A /* good.plist */; };
+		F3FBF8661C43A86000D92381 /* typeid6.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3FBF8651C43A86000D92381 /* typeid6.plist */; };
+		F3FBF8681C43A86600D92381 /* typeid23.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3FBF8671C43A86600D92381 /* typeid23.plist */; };
+		F3FBF86A1C43A86C00D92381 /* typeid22.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3FBF8691C43A86C00D92381 /* typeid22.plist */; };
+		F3FBF86C1C43A87200D92381 /* typeud21.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3FBF86B1C43A87200D92381 /* typeud21.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +67,14 @@
 		F31B49A51C3B8D49003BDB2F /* Main.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = Main.plist; path = ../../../Resources/Main.plist; sourceTree = "<group>"; };
 		F31B49A71C3BA07D003BDB2F /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		F31B49A81C3BA07D003BDB2F /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
+		F360C5091C43913100CBB1DC /* VOContentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOContentLayer.h; sourceTree = "<group>"; };
+		F360C50A1C43913100CBB1DC /* VOContentLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOContentLayer.m; sourceTree = "<group>"; };
+		F360C50B1C43913100CBB1DC /* VOIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOIndicatorAnimation.h; sourceTree = "<group>"; };
+		F360C50C1C43913100CBB1DC /* VOIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOIndicatorAnimation.m; sourceTree = "<group>"; };
+		F360C50D1C43913100CBB1DC /* VOSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegment.h; sourceTree = "<group>"; };
+		F360C50E1C43913100CBB1DC /* VOSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegment.m; sourceTree = "<group>"; };
+		F360C50F1C43913100CBB1DC /* VOSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegmentedControl.h; sourceTree = "<group>"; };
+		F360C5101C43913100CBB1DC /* VOSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegmentedControl.m; sourceTree = "<group>"; };
 		F36FAEB01C3A767C00390961 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		F36FAEB11C3A767C00390961 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		F36FAEB21C3A767C00390961 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
@@ -119,6 +135,10 @@
 		F3F7DFD51C3FBE610077546A /* GoodActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodActivityModel.h; sourceTree = "<group>"; };
 		F3F7DFD61C3FBE610077546A /* GoodActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodActivityModel.m; sourceTree = "<group>"; };
 		F3F7DFD81C3FC2270077546A /* good.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = good.plist; sourceTree = "<group>"; };
+		F3FBF8651C43A86000D92381 /* typeid6.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeid6.plist; sourceTree = "<group>"; };
+		F3FBF8671C43A86600D92381 /* typeid23.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeid23.plist; sourceTree = "<group>"; };
+		F3FBF8691C43A86C00D92381 /* typeid22.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeid22.plist; sourceTree = "<group>"; };
+		F3FBF86B1C43A87200D92381 /* typeud21.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeud21.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +168,21 @@
 				87C879D2E6B29165AAEF5204 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F360C5081C43913100CBB1DC /* VOSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				F360C5091C43913100CBB1DC /* VOContentLayer.h */,
+				F360C50A1C43913100CBB1DC /* VOContentLayer.m */,
+				F360C50B1C43913100CBB1DC /* VOIndicatorAnimation.h */,
+				F360C50C1C43913100CBB1DC /* VOIndicatorAnimation.m */,
+				F360C50D1C43913100CBB1DC /* VOSegment.h */,
+				F360C50E1C43913100CBB1DC /* VOSegment.m */,
+				F360C50F1C43913100CBB1DC /* VOSegmentedControl.h */,
+				F360C5101C43913100CBB1DC /* VOSegmentedControl.m */,
+			);
+			path = VOSegmentedControl;
 			sourceTree = "<group>";
 		};
 		F39F801F1C3CAECF003B9212 /* tools */ = {
@@ -292,6 +327,10 @@
 				F30BC2A31C3F5D5800B24E57 /* ActivityTheme.plist */,
 				F3F7DFD81C3FC2270077546A /* good.plist */,
 				F39F3BB31C42522E008BA3B9 /* HotTheme.plist */,
+				F3FBF8651C43A86000D92381 /* typeid6.plist */,
+				F3FBF8671C43A86600D92381 /* typeid23.plist */,
+				F3FBF8691C43A86C00D92381 /* typeid22.plist */,
+				F3FBF86B1C43A87200D92381 /* typeud21.plist */,
 				F3F7DFD51C3FBE610077546A /* GoodActivityModel.h */,
 				F3F7DFD61C3FBE610077546A /* GoodActivityModel.m */,
 				F39F3BB01C4235BA008BA3B9 /* HotThemeModel.h */,
@@ -360,6 +399,7 @@
 		F3CDFE3D1C3A4E7B00ECDA7C /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				F360C5081C43913100CBB1DC /* VOSegmentedControl */,
 				F3F544141C3FA0C600B0C1E8 /* PullingRefreshTableView */,
 				F39F801F1C3CAECF003B9212 /* tools */,
 			);
@@ -451,12 +491,16 @@
 				F3F7DFD91C3FC2270077546A /* good.plist in Resources */,
 				F30BC2A41C3F5D5800B24E57 /* ActivityTheme.plist in Resources */,
 				F3F5441A1C3FA0C600B0C1E8 /* blueArrowDown.png in Resources */,
+				F3FBF8681C43A86600D92381 /* typeid23.plist in Resources */,
 				F3CDFE441C3A509300ECDA7C /* Mine.storyboard in Resources */,
 				F3CDFDE41C3A1C3200ECDA7C /* Assets.xcassets in Resources */,
 				F31B49A61C3B8D49003BDB2F /* Main.plist in Resources */,
 				F3F544191C3FA0C600B0C1E8 /* blueArrow.png in Resources */,
 				F39F80411C3D1B13003B9212 /* ActivityDetail.plist in Resources */,
+				F3FBF8661C43A86000D92381 /* typeid6.plist in Resources */,
 				F39F3BAF1C423423008BA3B9 /* HotThemeTableViewCell.xib in Resources */,
+				F3FBF86C1C43A87200D92381 /* typeud21.plist in Resources */,
+				F3FBF86A1C43A86C00D92381 /* typeid22.plist in Resources */,
 				F3CDFDE71C3A1C3200ECDA7C /* LaunchScreen.storyboard in Resources */,
 				F3C1865F1C410B010045E19F /* GoodActivityTableViewCell.xib in Resources */,
 			);
@@ -518,8 +562,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F39D49DC1C3E4C42002B12B5 /* HWTools.m in Sources */,
+				F360C5121C43913100CBB1DC /* VOIndicatorAnimation.m in Sources */,
 				F36FAEB31C3A767C00390961 /* MainTableViewCell.m in Sources */,
+				F360C5111C43913100CBB1DC /* VOContentLayer.m in Sources */,
 				F3A8EE511C3E10E800137082 /* ActivityView.m in Sources */,
+				F360C5131C43913100CBB1DC /* VOSegment.m in Sources */,
 				F39F80391C3CC07D003B9212 /* HotActivityViewController.m in Sources */,
 				F3CDFDE21C3A1C3200ECDA7C /* AppDelegate.m in Sources */,
 				F39F80361C3CC06B003B9212 /* GoodActivityViewController.m in Sources */,
@@ -527,6 +574,7 @@
 				F3CDFE3A1C3A4DC600ECDA7C /* DiscoverViewController.m in Sources */,
 				F3CDFE3C1C3A4DC600ECDA7C /* MineViewController.m in Sources */,
 				F3F7DFD71C3FBE610077546A /* GoodActivityModel.m in Sources */,
+				F360C5141C43913100CBB1DC /* VOSegmentedControl.m in Sources */,
 				F39F802D1C3CBE6F003B9212 /* ActivityDetailViewController.m in Sources */,
 				F39F802A1C3CBD9D003B9212 /* SearchViewController.m in Sources */,
 				F30BC2A71C3F5ECD00B24E57 /* ActivityThemeView.m in Sources */,

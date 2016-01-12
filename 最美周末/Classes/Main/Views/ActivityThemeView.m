@@ -41,7 +41,7 @@
     
     //活动详情
     [self drawContentWithArray:dataDic[@"content"]];
-    self.mainScrollView.contentSize = CGSizeMake(kScreenWidth, _lastLabelBottom+186+70);
+    self.mainScrollView.contentSize = CGSizeMake(kScreenWidth, _prevousImageBottom+30);
 }
 - (UIScrollView *)mainScrollView{
     if (_mainScrollView == nil) {
@@ -51,7 +51,7 @@
 }
 - (UIImageView *)headImageView{
     if (_headImageView == nil) {
-        self.headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, kScreenWidth - 20, 180)];
+        self.headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, kScreenWidth - 20, 190)];
         
     }
     return _headImageView;
@@ -64,10 +64,10 @@
         //每一段活动信息
         CGFloat height = [HWTools getTextHeightWithText:dic[@"description"] bigestSize:CGSizeMake(kScreenWidth, 1000) textFont:15.0];
         CGFloat y;
-        if (_prevousImageBottom > 186) {//如果图片底部高度没有值(也就是小于500)，也就说明是加载第一个label，那么y的值不应该减去500
-            y = 186 + _prevousImageBottom - 186;
+        if (_prevousImageBottom > 200) {//如果图片底部高度没有值(也就是小于500)，也就说明是加载第一个label，那么y的值不应该减去500
+            y = 200 + _prevousImageBottom - 200;
         }else{
-            y = 186 + _prevousImageBottom;
+            y = 200 + _prevousImageBottom;
         }
         //如果标题存在
         NSString *title = dic[@"title"];
@@ -88,7 +88,7 @@
         
         NSArray *urlsArray = dic[@"urls"];
         if (urlsArray == nil) {//当某个段落中没有图片时，上次图片的高度使用上次label的底部高度+10
-            _prevousImageBottom = label.bottom + 10;
+            _prevousImageBottom = label.bottom + 10+10;
         }else{
             CGFloat lastImageBottom = 0.0;
             for (NSDictionary *urlDic in urlsArray) {
@@ -97,16 +97,16 @@
                     //图片不只一张时
                     if (lastImageBottom == 0.0) {
                         if (title != nil) {//有title的算上title的30像素
-                            imgY = _prevousImageBottom + label.height + 30 + 5;
+                            imgY = _prevousImageBottom + label.height + 30 + 5+5;
                         }else{
-                            imgY = _prevousImageBottom + label.height + 5;
+                            imgY = _prevousImageBottom + label.height + 5+5;
                         }
                     }else{
                         imgY = lastImageBottom + 10;
                     }
                 }else{
                     //单张图片时
-                    imgY = label.bottom;
+                    imgY = label.bottom+10;
                 }
                 CGFloat width = [urlDic[@"width"]integerValue];
                 CGFloat imageHeight = [urlDic[@"height"]integerValue];
@@ -114,7 +114,7 @@
                 [imageView sd_setImageWithURL:[NSURL URLWithString:urlDic[@"url"]] placeholderImage:nil];
                 [self.mainScrollView addSubview:imageView];
                 //每次都留最新的图片底部高度
-                _prevousImageBottom = imageView.bottom;
+                _prevousImageBottom = imageView.bottom+10;
                 if (urlsArray.count > 1) {
                     lastImageBottom = imageView.bottom;
                 }

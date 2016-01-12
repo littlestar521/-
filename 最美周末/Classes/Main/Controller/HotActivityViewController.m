@@ -31,10 +31,11 @@
     self.title = @"热门专题";
 
     [self showBackBtn];
+    [self.view addSubview:self.tableView];
+    self.rcArray = [NSMutableArray new];
     self.tableView.tableFooterView = [[UIView alloc]init];
     [self.tableView registerNib:[UINib nibWithNibName:@"HotThemeTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.tableView launchRefreshing];
-    [self.view addSubview:self.tableView];
     
 }
 #pragma mark ------ UITableViewDataSource
@@ -65,6 +66,7 @@
 }
 //tableView上拉刷新开始时调用
 - (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
+    self.refreshing = NO;
     _pageCount += 1;
     [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
 }
@@ -85,21 +87,26 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *dic = resultDic[@"success"];
             NSArray *rcDataArray = dic[@"rcData"];
-            self.rcArray = [NSMutableArray new];
+            if (self.refreshing) {
+                if (self.rcArray.count > 0) {
+                    ////下拉刷新的时候需要移除数组中的元素
+                    [self.rcArray removeAllObjects];
+                }
+            }
             for (NSDictionary *dit in rcDataArray) {
                 HotThemeModel *model = [[HotThemeModel alloc]initWithDictionary:dit];
                 [self.rcArray addObject:model];
             }
             [self.tableView reloadData];
+            //完成加载
+            [self.tableView tableViewDidFinishedLoading];
+            self.tableView.reachedTheEnd = NO;
         }
 //                MJJLog(@"%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //                MJJLog(@"%@",error);
     }];
     
-    //完成加载
-    [self.tableView tableViewDidFinishedLoading];
-    self.tableView.reachedTheEnd = NO;
 }
 //手指开始拖动方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -107,13 +114,13 @@
 }
 //手指结束拖动方法
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self.tableView tableViewDidScroll:scrollView];
+    [self.tableView tableViewDidEndDragging: scrollView];
 }
 
 #pragma mark--------LazyLoading
 - (PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 64, kScreenWidth,kScreenHeight-64) pullingDelegate:self];
+        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight-64) pullingDelegate:self];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.tableView.rowHeight = 150;

@@ -61,7 +61,7 @@
 
     [self configTableViewHeaderView];
     //网络请求
-//    [self requestModel];
+    [self requestModel];
     //启动定时器
     [self startTimer];
     
@@ -102,7 +102,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc]init];
     
-    UIImageView *sectionView = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-160, 5, 320, 16)];
+    UIImageView *sectionView = [[UIImageView alloc]initWithFrame:CGRectMake(kScreenWidth/2-160, 5, 320, 16)];
     if (section == 0) {
         sectionView.image = [UIImage imageNamed:@"home_recommed_ac"];
         
@@ -327,6 +327,7 @@
 
 - (void)mainActivity:(UIButton *)btn{
     ClassfyViewController *classfyVC = [[ClassfyViewController alloc]init];
+    classfyVC.classifyListType = btn.tag - 100 + 1;
     [self.navigationController pushViewController:classfyVC animated:YES];
 }
 - (void)hotActivity:(UIButton *)btn{

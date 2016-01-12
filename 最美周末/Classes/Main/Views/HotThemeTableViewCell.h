@@ -11,4 +11,5 @@
 @interface HotThemeTableViewCell : UITableViewCell
 
 @property(nonatomic,strong)HotThemeModel *hotModel;
+
 @end

@@ -12,6 +12,7 @@
 #import "HWDefine.h"
 #import "UIViewController+Common.h"
 #import "UIView+Extesion.h"
+#import "HWTools.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
