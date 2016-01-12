@@ -50,6 +50,7 @@
     [self getFourRequest];
     //根据上一页选择的按钮，确定显示第几页数据
     [self showPreviousSelectBtn];
+    [self.tableView launchRefreshing];
     
     
 }
@@ -160,7 +161,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //        MJJLog(@"%@",error);
     }];
-
+    
     //typeid = 21
     [sessionManager GET:[NSString stringWithFormat:@"%@&page=%@&typeid=%@",kClassifyList,@(1),@(21)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
