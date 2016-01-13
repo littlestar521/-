@@ -27,8 +27,9 @@
     self.frame = CGRectMake(0, 0, kScreenWidth, 95);
 }
 - (void)setGoodModel:(GoodActivityModel *)goodModel{
-    
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:goodModel.image] placeholderImage:nil];
+    self.headImageView.layer.cornerRadius = 20;
+    self.headImageView.clipsToBounds = YES;
     self.ageLabel.text = goodModel.age;
     self.loveCountLabel.text = [NSString stringWithFormat:@"%@", goodModel.counts];
     self.activityTitleLabel.text = goodModel.title;

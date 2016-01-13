@@ -120,6 +120,8 @@
                 }
             }
         }
+        //保留最后一个lable的底部高度
+        _lastLabelBottom = label.bottom > _prevousImageBottom ? label.bottom+70 :_prevousImageBottom+70;
     }
 }
 

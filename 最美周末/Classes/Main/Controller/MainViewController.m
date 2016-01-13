@@ -42,7 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-// 设置navigationBar颜色   self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:96/255.0 green:185/255.0 blue:191/255.0 alpha:1.0];
+// 设置navigationBar颜色
+    self.navigationController.navigationBar.barTintColor = MineColor;
     UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc]initWithTitle:@"北京" style:UIBarButtonItemStylePlain target:self action:@selector(selectCityAction:)];
     leftBarBtn.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftBarBtn;
@@ -222,7 +223,7 @@
         //刷新数据
         [self configTableViewHeaderView];
         NSString *cityName = dic[@"cityname"];
-            //以请求回来的城市作为导航栏按钮标题
+        //以请求回来的城市作为导航栏按钮标题
         self.navigationItem.leftBarButtonItem.title = cityName;
             
         }else{

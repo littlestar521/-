@@ -40,6 +40,5 @@
     }
     return self;
 }
-//- (void)getModelWithDic
 
 @end

@@ -8,13 +8,13 @@
         <!--我的-->
         <scene sceneID="rq7-9N-AwM">
             <objects>
-                <viewController id="RhT-u9-IXo" customClass="MineViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Mine" id="RhT-u9-IXo" customClass="MineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0iH-OT-rl0"/>
                         <viewControllerLayoutGuide type="bottom" id="rRm-1X-RGE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Tza-oC-tJV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="Mine" id="Tza-oC-tJV">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.70872880415137063" green="0.88727986879999998" blue="0.67645630493266184" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BG-nb-ey9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137.5" y="388.5"/>
+            <point key="canvasLocation" x="816.5" y="388.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cMv-qM-VqM">
@@ -31,7 +31,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Qu-Qk-a6i" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z1E-0j-vOj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Z1E-0j-vOj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -42,7 +42,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoY-XU-1HL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="389"/>
+            <point key="canvasLocation" x="376.5" y="388.5"/>
         </scene>
     </scenes>
 </document>

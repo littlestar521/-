@@ -8,13 +8,13 @@
         <!--发现-->
         <scene sceneID="0BQ-e6-1ie">
             <objects>
-                <viewController id="AwH-fF-FdZ" customClass="DiscoverViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Discover" id="AwH-fF-FdZ" customClass="DiscoverViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dlf-Hy-b5o"/>
                         <viewControllerLayoutGuide type="bottom" id="0Jj-Xv-eIG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QB4-uj-RsF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94683636244941194" green="0.72290692891848862" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOY-Ai-cAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1193" y="431"/>
+            <point key="canvasLocation" x="924.5" y="391.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1n5-j2-dw9">
@@ -31,9 +31,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dlb-QN-blx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nbe-dj-rUe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="Discover" translucent="NO" id="Nbe-dj-rUe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -42,7 +43,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5p-Ib-mnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="416"/>
+            <point key="canvasLocation" x="479.5" y="391.5"/>
         </scene>
     </scenes>
 </document>
