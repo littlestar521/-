@@ -155,6 +155,7 @@
     
 }
 - (void)cancel{
+    [self.view removeFromSuperview];
     
 }
 - (void)sendEmail{
