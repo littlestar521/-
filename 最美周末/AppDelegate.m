@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-@interface AppDelegate ()
+#import "WeiboSDK.h"
+@interface AppDelegate ()<WeiboSDKDelegate>
 
 @end
 
@@ -53,10 +54,21 @@
     self.self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
     self.window.rootViewController = self.tabBarVC;
     
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kAppKey];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+#pragma mark ------- Share WeiboSDK
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [WeiboSDK handleOpenURL:url delegate:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

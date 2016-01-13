@@ -83,6 +83,7 @@
             break;
         case 2:
         {//
+            [self share];
             
         }
             break;
@@ -120,6 +121,41 @@
 }
 - (void)login{
 
+}
+- (void)share{
+    UIWindow *window = [[UIApplication sharedApplication].delegate window];
+    UIView *shareView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-350, kScreenWidth, 350)];
+    [window addSubview:shareView];
+    shareView.backgroundColor = [UIColor cyanColor];
+    
+    UIButton *weiboBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    weiboBtn.frame = CGRectMake(70, 40, 70, 70);
+    [weiboBtn setImage:[UIImage imageNamed:@"shareWeibo"] forState:UIControlStateNormal];
+    [shareView addSubview:weiboBtn];
+    UIButton *weixinBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    weixinBtn.frame = CGRectMake(150, 40, 70, 70);
+    [weixinBtn setImage:[UIImage imageNamed:@"shareWeixin"] forState:UIControlStateNormal];
+    [shareView addSubview:weixinBtn];
+    UIButton *friendsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    friendsBtn.frame = CGRectMake(230, 40, 70, 70);
+    [friendsBtn setImage:[UIImage imageNamed:@"shareFriends"] forState:UIControlStateNormal];
+    [shareView addSubview:friendsBtn];
+    UIButton *removeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    removeBtn.frame = CGRectMake(20, 120, kScreenWidth-40, 40);
+    [removeBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [removeBtn setBackgroundColor:[UIColor yellowColor]];
+    [removeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [removeBtn addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
+    [shareView addSubview:removeBtn];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        
+    }];
+    [self.view addSubview:shareView];
+    
+}
+- (void)cancel{
+    
 }
 - (void)sendEmail{
     Class mailClass = NSClassFromString(@"");
@@ -182,9 +218,9 @@
 }
 - (UILabel *)nikeNameLabel{
     if (_nikeNameLabel == nil) {
-        self.nikeNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(180, 90, kScreenWidth-200 , 40)];
+        self.nikeNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(180, 60, kScreenWidth-200 , 60)];
         self.nikeNameLabel.numberOfLines = 0;
-        self.nikeNameLabel.text = @"欢迎来到 最美周末";
+        self.nikeNameLabel.text = @"欢迎来到 最美周末!";
         self.nikeNameLabel.textColor = [UIColor whiteColor];
     }
     return _nikeNameLabel;
