@@ -69,6 +69,6 @@
     </objects>
     <resources>
         <image name="age_bg" width="25" height="12"/>
-        <image name="list_like_heart" width="50" height="50"/>
+        <image name="list_like_heart" width="25" height="25"/>
     </resources>
 </document>

@@ -70,6 +70,7 @@
 		F3E798321C44FAD50073AF14 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E798301C44FAD50073AF14 /* DiscoverTableViewCell.m */; };
 		F3E798331C44FAD50073AF14 /* DiscoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E798311C44FAD50073AF14 /* DiscoverTableViewCell.xib */; };
 		F3E798691C4512750073AF14 /* DiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E798681C4512750073AF14 /* DiscoverModel.m */; };
+		F3F35DF51C47CD5200A54519 /* Best周末.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3F35DF41C47CD5200A54519 /* Best周末.jpg */; };
 		F3F544191C3FA0C600B0C1E8 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F544151C3FA0C600B0C1E8 /* blueArrow.png */; };
 		F3F5441A1C3FA0C600B0C1E8 /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F544161C3FA0C600B0C1E8 /* blueArrowDown.png */; };
 		F3F5441B1C3FA0C600B0C1E8 /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F544181C3FA0C600B0C1E8 /* PullingRefreshTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -193,6 +194,7 @@
 		F3E798311C44FAD50073AF14 /* DiscoverTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverTableViewCell.xib; sourceTree = "<group>"; };
 		F3E798671C4512750073AF14 /* DiscoverModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverModel.h; sourceTree = "<group>"; };
 		F3E798681C4512750073AF14 /* DiscoverModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverModel.m; sourceTree = "<group>"; };
+		F3F35DF41C47CD5200A54519 /* Best周末.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Best周末.jpg"; sourceTree = "<group>"; };
 		F3F544151C3FA0C600B0C1E8 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
 		F3F544161C3FA0C600B0C1E8 /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrowDown.png; sourceTree = "<group>"; };
 		F3F544171C3FA0C600B0C1E8 /* PullingRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullingRefreshTableView.h; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 		F3CDFE3E1C3A4FE300ECDA7C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3F35DF41C47CD5200A54519 /* Best周末.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				TargetAttributes = {
 					F3CDFDD91C3A1C3200ECDA7C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6K2QGZ2A9Y;
 					};
 				};
 			};
@@ -640,6 +644,7 @@
 				F3F5441A1C3FA0C600B0C1E8 /* blueArrowDown.png in Resources */,
 				F3FBF8681C43A86600D92381 /* typeid23.plist in Resources */,
 				F3E7982D1C449EFB0073AF14 /* ProgressHUD.bundle in Resources */,
+				F3F35DF51C47CD5200A54519 /* Best周末.jpg in Resources */,
 				F3CDFE441C3A509300ECDA7C /* Mine.storyboard in Resources */,
 				F30C35931C451F610075C894 /* Discover.plist in Resources */,
 				F3CDFDE41C3A1C3200ECDA7C /* Assets.xcassets in Resources */,
@@ -846,6 +851,9 @@
 			baseConfigurationReference = 473CA0BCF906FDE37D28A026 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/qipeng/Desktop/最美周末/最美周末/Library/tools/Main.pch";
 				INFOPLIST_FILE = "最美周末/Info.plist";
@@ -853,12 +861,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/最美周末/Library/tools/libWeiboSDK",
 					"$(PROJECT_DIR)/最美周末/Library/libWeiboSDK",
 					"$(PROJECT_DIR)/最美周末/Library/libWeiboSDK/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "can.Mangoinc.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -867,6 +875,9 @@
 			baseConfigurationReference = A4BF24AFDE9D41F184091649 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/qipeng/Desktop/最美周末/最美周末/Library/tools/Main.pch";
 				INFOPLIST_FILE = "最美周末/Info.plist";
@@ -874,12 +885,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/最美周末/Library/tools/libWeiboSDK",
 					"$(PROJECT_DIR)/最美周末/Library/libWeiboSDK",
 					"$(PROJECT_DIR)/最美周末/Library/libWeiboSDK/SDKExport",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "can.Mangoinc.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -93,7 +93,7 @@
         label.font = [UIFont systemFontOfSize:15.0];
         [self.mainScrollView addSubview:label];
         //保留最后一个label的高度，+64是下边tabBar的高度
-        _lastLabelBottom = label.bottom + 30;
+        _lastLabelBottom = label.bottom + 10 + 64;
         
         NSArray *urlsArray = dic[@"urls"];
         if (urlsArray == nil) {//当某个段落中没有图片时，上次图片的高度使用上次label的底部高度+10

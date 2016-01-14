@@ -145,6 +145,7 @@
 - (void)share{
     self.shareView = [[ShareView alloc]init];
     [self.view addSubview:self.shareView];
+    
 }
 - (void)sendEmail{
     Class mailClass = NSClassFromString(@"");
