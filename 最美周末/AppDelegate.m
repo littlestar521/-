@@ -9,11 +9,13 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "WeiboSDK.h"
-@interface AppDelegate ()<WeiboSDKDelegate>
+#import "WXApi.h"
+@interface AppDelegate ()<WeiboSDKDelegate,WXApiDelegate>
 @property(nonatomic,strong)UINavigationController *nav;
 
 @property(nonatomic,strong)NSString *wbCurrentUserID;
 @property(nonatomic,strong)NSString *wbRefreshToken;
+
 
 @end
 @interface WBBaseRequest ()
@@ -62,9 +64,12 @@
     self.tabBarVC.tabBar.tintColor = [UIColor orangeColor];
     self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
     self.window.rootViewController = self.tabBarVC;
-    
+    //微博
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kAppKey];
+    //微信
+    [WXApi registerApp:@"wx963f2bc6f214e3a9"];
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -74,14 +79,21 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self];
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
     return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self];
 }
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
 }
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
 }
+//- (void)onReq:(BaseReq *)req{
+//}
+//- (void)onResp:(BaseResp *)resp{
+//}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

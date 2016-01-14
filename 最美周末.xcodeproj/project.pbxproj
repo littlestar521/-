@@ -52,6 +52,9 @@
 		F3C7FC2F1C47237F00AA8C37 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C7FC231C47237F00AA8C37 /* libWeiboSDK.a */; };
 		F3C7FC301C47237F00AA8C37 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3C7FC2C1C47237F00AA8C37 /* WeiboSDK.bundle */; };
 		F3C7FC351C47238B00AA8C37 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C7FC321C47238B00AA8C37 /* libWeChatSDK.a */; };
+		F3C7FC371C47288F00AA8C37 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C7FC361C47288F00AA8C37 /* libc++.tbd */; };
+		F3C7FC3A1C47386200AA8C37 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C7FC391C47386200AA8C37 /* ShareView.m */; };
+		F3C7FC3D1C474DE800AA8C37 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C7FC3C1C474DE800AA8C37 /* ShareViewController.m */; };
 		F3CDFDDF1C3A1C3200ECDA7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CDFDDE1C3A1C3200ECDA7C /* main.m */; };
 		F3CDFDE21C3A1C3200ECDA7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CDFDE11C3A1C3200ECDA7C /* AppDelegate.m */; };
 		F3CDFDE41C3A1C3200ECDA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CDFDE31C3A1C3200ECDA7C /* Assets.xcassets */; };
@@ -161,6 +164,11 @@
 		F3C7FC321C47238B00AA8C37 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		F3C7FC331C47238B00AA8C37 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		F3C7FC341C47238B00AA8C37 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		F3C7FC361C47288F00AA8C37 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F3C7FC381C47386200AA8C37 /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
+		F3C7FC391C47386200AA8C37 /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		F3C7FC3B1C474DE800AA8C37 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		F3C7FC3C1C474DE800AA8C37 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		F3CDFDDA1C3A1C3200ECDA7C /* 最美周末.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "最美周末.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3CDFDDE1C3A1C3200ECDA7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3CDFDE01C3A1C3200ECDA7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -203,8 +211,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3A154571C46511900C03829 /* libsqlite3.tbd in Frameworks */,
+				F3C7FC371C47288F00AA8C37 /* libc++.tbd in Frameworks */,
 				F3A154551C46510800C03829 /* libz.tbd in Frameworks */,
+				F3A154471C46503000C03829 /* SystemConfiguration.framework in Frameworks */,
+				F3A154571C46511900C03829 /* libsqlite3.tbd in Frameworks */,
 				F3A154531C46507B00C03829 /* CoreGraphics.framework in Frameworks */,
 				F3C7FC2F1C47237F00AA8C37 /* libWeiboSDK.a in Frameworks */,
 				F3A154511C46506D00C03829 /* Foundation.framework in Frameworks */,
@@ -212,7 +222,6 @@
 				F3A1544D1C46505400C03829 /* CoreText.framework in Frameworks */,
 				F3A1544B1C46504A00C03829 /* CoreTelephony.framework in Frameworks */,
 				F3A154491C46503B00C03829 /* Security.framework in Frameworks */,
-				F3A154471C46503000C03829 /* SystemConfiguration.framework in Frameworks */,
 				F3A154451C46501400C03829 /* ImageIO.framework in Frameworks */,
 				F3A154431C46500700C03829 /* QuartzCore.framework in Frameworks */,
 				F3A154321C462C1600C03829 /* MessageUI.framework in Frameworks */,
@@ -236,6 +245,7 @@
 		A2F928359BDDC598F5BFF9C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3C7FC361C47288F00AA8C37 /* libc++.tbd */,
 				F3A154561C46511900C03829 /* libsqlite3.tbd */,
 				F3A154541C46510800C03829 /* libz.tbd */,
 				F3A154521C46507B00C03829 /* CoreGraphics.framework */,
@@ -496,6 +506,8 @@
 			children = (
 				F3CDFE361C3A4DC600ECDA7C /* MineViewController.h */,
 				F3CDFE371C3A4DC600ECDA7C /* MineViewController.m */,
+				F3C7FC3B1C474DE800AA8C37 /* ShareViewController.h */,
+				F3C7FC3C1C474DE800AA8C37 /* ShareViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -511,6 +523,8 @@
 			isa = PBXGroup;
 			children = (
 				F3CDFE431C3A509300ECDA7C /* Mine.storyboard */,
+				F3C7FC381C47386200AA8C37 /* ShareView.h */,
+				F3C7FC391C47386200AA8C37 /* ShareView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -710,6 +724,7 @@
 				F39F80331C3CBFFF003B9212 /* ClassfyViewController.m in Sources */,
 				F3CDFE3A1C3A4DC600ECDA7C /* DiscoverViewController.m in Sources */,
 				F3CDFE3C1C3A4DC600ECDA7C /* MineViewController.m in Sources */,
+				F3C7FC3D1C474DE800AA8C37 /* ShareViewController.m in Sources */,
 				F3F7DFD71C3FBE610077546A /* GoodActivityModel.m in Sources */,
 				F3E798691C4512750073AF14 /* DiscoverModel.m in Sources */,
 				F360C5141C43913100CBB1DC /* VOSegmentedControl.m in Sources */,
@@ -717,6 +732,7 @@
 				F39F802A1C3CBD9D003B9212 /* SearchViewController.m in Sources */,
 				F30BC2A71C3F5ECD00B24E57 /* ActivityThemeView.m in Sources */,
 				F39F80301C3CBF43003B9212 /* ThemeViewController.m in Sources */,
+				F3C7FC3A1C47386200AA8C37 /* ShareView.m in Sources */,
 				F3F5441B1C3FA0C600B0C1E8 /* PullingRefreshTableView.m in Sources */,
 				F3CDFDDF1C3A1C3200ECDA7C /* main.m in Sources */,
 				F39F3BAE1C423423008BA3B9 /* HotThemeTableViewCell.m in Sources */,
