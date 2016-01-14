@@ -10,6 +10,18 @@
 #import "MainViewController.h"
 #import "WeiboSDK.h"
 @interface AppDelegate ()<WeiboSDKDelegate>
+@property(nonatomic,strong)UINavigationController *nav;
+
+@property(nonatomic,strong)NSString *wbCurrentUserID;
+@property(nonatomic,strong)NSString *wbRefreshToken;
+
+@end
+@interface WBBaseRequest ()
+- (void)debugPrint;
+@end
+
+@interface WBBaseResponse ()
+- (void)debugPrint;
 
 @end
 
@@ -33,10 +45,7 @@
      mainNav.tabBarItem.selectedImage = [selectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //规定图片显示位置，上左下右的顺序显示
     mainNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
-     
-     
-     */
-    
+    */
     
     UIStoryboard *discoverSB = [UIStoryboard storyboardWithName:@"Discover" bundle:nil];
     UINavigationController *discoverNav = discoverSB.instantiateInitialViewController;
@@ -50,8 +59,8 @@
     
     //添加被管理的视图控制器
     self.tabBarVC.viewControllers = @[mainNav,discoverNav,mineNav];
-    self.self.tabBarVC.tabBar.tintColor = [UIColor orangeColor];
-    self.self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
+    self.tabBarVC.tabBar.tintColor = [UIColor orangeColor];
+    self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
     self.window.rootViewController = self.tabBarVC;
     
     [WeiboSDK enableDebugMode:YES];
@@ -63,14 +72,16 @@
 }
 #pragma mark ------- Share WeiboSDK
 
-
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     return [WeiboSDK handleOpenURL:url delegate:self];
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
     return [WeiboSDK handleOpenURL:url delegate:self];
 }
-
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
+}
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

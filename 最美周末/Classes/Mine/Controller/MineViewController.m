@@ -10,12 +10,16 @@
 #import <SDWebImage/SDImageCache.h>
 #import <MessageUI/MessageUI.h>
 #import "ProgressHUD.h"
+#import "WeiboSDK.h"
+#import "AppDelegate.h"
+
 @interface MineViewController ()<UITableViewDataSource,UITableViewDelegate,MFMailComposeViewControllerDelegate>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)UIButton *headImageBtn;
 @property(nonatomic,strong)UILabel *nikeNameLabel;
 @property(nonatomic,strong)NSArray *imageArray;
 @property(nonatomic,strong)NSMutableArray *titleArray;
+@property(nonatomic,strong)UIView *shareView;
 
 @end
 
@@ -124,38 +128,62 @@
 }
 - (void)share{
     UIWindow *window = [[UIApplication sharedApplication].delegate window];
-    UIView *shareView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-350, kScreenWidth, 350)];
-    [window addSubview:shareView];
-    shareView.backgroundColor = [UIColor cyanColor];
+    self.shareView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-170, kScreenWidth, 250)];
+    [window addSubview:self.shareView];
+    self.shareView.backgroundColor = [UIColor cyanColor];
     
     UIButton *weiboBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    weiboBtn.frame = CGRectMake(70, 40, 70, 70);
+    weiboBtn.frame = CGRectMake(70, 30, 70, 70);
     [weiboBtn setImage:[UIImage imageNamed:@"shareWeibo"] forState:UIControlStateNormal];
-    [shareView addSubview:weiboBtn];
+    [weiboBtn addTarget:self action:@selector(weiboAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.shareView addSubview:weiboBtn];
     UIButton *weixinBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    weixinBtn.frame = CGRectMake(150, 40, 70, 70);
+    weixinBtn.frame = CGRectMake(150, 30, 70, 70);
     [weixinBtn setImage:[UIImage imageNamed:@"shareWeixin"] forState:UIControlStateNormal];
-    [shareView addSubview:weixinBtn];
+    [weixinBtn addTarget:self action:@selector(weixinAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.shareView addSubview:weixinBtn];
     UIButton *friendsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    friendsBtn.frame = CGRectMake(230, 40, 70, 70);
+    friendsBtn.frame = CGRectMake(230, 30, 70, 70);
     [friendsBtn setImage:[UIImage imageNamed:@"shareFriends"] forState:UIControlStateNormal];
-    [shareView addSubview:friendsBtn];
+    [friendsBtn addTarget:self action:@selector(friendsAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.shareView addSubview:friendsBtn];
     UIButton *removeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    removeBtn.frame = CGRectMake(20, 120, kScreenWidth-40, 40);
+    removeBtn.frame = CGRectMake(20, 110, kScreenWidth-40, 40);
     [removeBtn setTitle:@"取消" forState:UIControlStateNormal];
     [removeBtn setBackgroundColor:[UIColor yellowColor]];
     [removeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [removeBtn addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
-    [shareView addSubview:removeBtn];
+    [self.shareView addSubview:removeBtn];
     
     [UIView animateWithDuration:1.0 animations:^{
         
     }];
-    [self.view addSubview:shareView];
+}
+- (void)weiboAction{
+    [self cancel];
+    AppDelegate *myDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+    authRequest.redirectURI = kRedirectURI;
+    authRequest.scope = @"all";
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self messageToShare] authInfo:authRequest access_token:myDelegate.wbtoken];
+    request.userInfo = @{@"SSO_From":@"SendMessageToWeiboViewController",@"Other_Info_1":[NSNumber numberWithInt:123],@"Other_Info_2":@[@"obj1",@"obj2"],@"Other_Info_3":@{@"key1":@"obj1",@"key2":@"obj2"}};
+    [WeiboSDK sendRequest:request];
+}
+
+- (WBMessageObject *)messageToShare{
+    WBMessageObject *message = [WBMessageObject message];
+    message.text = @"赶快来和小伙伴们一起度过“最美周末”吧！！！";
+    
+    return message;
+}
+- (void)weixinAction{
     
 }
+- (void)friendsAction{
+
+}
 - (void)cancel{
-    [self.view removeFromSuperview];
+    [self.shareView removeFromSuperview];
     
 }
 - (void)sendEmail{
