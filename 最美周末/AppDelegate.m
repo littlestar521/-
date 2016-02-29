@@ -10,7 +10,16 @@
 #import "MainViewController.h"
 #import "WeiboSDK.h"
 #import "WXApi.h"
-@interface AppDelegate ()<WeiboSDKDelegate,WXApiDelegate>
+//1.引入框架
+#import <CoreLocation/CoreLocation.h>
+//5.遵循代理协议
+@interface AppDelegate ()<WeiboSDKDelegate,WXApiDelegate,CLLocationManagerDelegate>
+{
+    //2.框架定位所需要的类的实例对象
+    CLLocationManager *_locationManager;
+    //创建地理编码对象
+    CLGeocoder *_geocoder;
+}
 @property(nonatomic,strong)UINavigationController *nav;
 
 @property(nonatomic,strong)NSString *wbCurrentUserID;
@@ -33,6 +42,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    //3.初始化定位对象
+    _locationManager = [[CLLocationManager alloc]init];
+    //初始化地理编码对象
+    _geocoder = [[CLGeocoder alloc]init];
+    //4.判断定位服务是否可用
+    if (![CLLocationManager locationServicesEnabled]) {
+        MJJLog(@"用户位置服务不可用");
+    }
+    //6.如果没有授权，请求用户授权
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [_locationManager requestWhenInUseAuthorization];
+    }else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse){
+        //6.1设置代理
+        _locationManager.delegate = self;
+        //6.2设置定位精度，精度越高越耗电
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        //6.3定位频率，每隔多少米定位一次
+        CLLocationDistance distance = 10.0;
+        _locationManager.distanceFilter = distance;
+        //6.4启动跟踪定位
+        [_locationManager startUpdatingLocation];
+    }
+    
     //self.self.tabBarVC
     self.tabBarVC = [[UITabBarController alloc]init];
     //创建被管理的视图控制器
@@ -93,7 +126,27 @@
 //}
 //- (void)onResp:(BaseResp *)resp{
 //}
-
+/*
+ @pragma manager  当前使用的定位对象
+ @pragma locations 返回定位的对象是一个数组对象，数组里面元素是CLLocation类型
+ */
+#pragma mark ------- CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    MJJLog(@"%@",locations);
+    //从数组中取出第一个定位信息
+    CLLocation *location = [locations firstObject];
+    //获取坐标
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    //汉字多了之后就不提示,可在外面写好复制过来
+    MJJLog(@"经度：%f  纬度：%f 海拔：%f 航向：%f 行走速度：%f",coordinate.longitude,coordinate.latitude,location.altitude,location.course,location.speed);
+    [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        CLPlacemark *placeMark = [placemarks firstObject];
+        MJJLog(@"%@",placeMark.addressDictionary);
+    }];
+    //如果不需要实时定位，使用完及时关闭定位服务
+    [_locationManager stopUpdatingLocation];
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

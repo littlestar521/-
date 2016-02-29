@@ -47,6 +47,9 @@
 		F3A154551C46510800C03829 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A154541C46510800C03829 /* libz.tbd */; };
 		F3A154571C46511900C03829 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A154561C46511900C03829 /* libsqlite3.tbd */; };
 		F3A8EE511C3E10E800137082 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A8EE501C3E10E800137082 /* ActivityView.m */; };
+		F3B5747C1C83D06800037955 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B5747B1C83D06800037955 /* Login.storyboard */; };
+		F3B5747F1C83D09100037955 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B5747E1C83D09100037955 /* LoginViewController.m */; };
+		F3B574861C8422E800037955 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B574851C8422E800037955 /* CoreLocation.framework */; };
 		F3C1865E1C410B010045E19F /* GoodActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C1865C1C410B010045E19F /* GoodActivityTableViewCell.m */; };
 		F3C1865F1C410B010045E19F /* GoodActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3C1865D1C410B010045E19F /* GoodActivityTableViewCell.xib */; };
 		F3C7FC2F1C47237F00AA8C37 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C7FC231C47237F00AA8C37 /* libWeiboSDK.a */; };
@@ -147,6 +150,10 @@
 		F3A154561C46511900C03829 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F3A8EE4F1C3E10E800137082 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
 		F3A8EE501C3E10E800137082 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
+		F3B5747B1C83D06800037955 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F3B5747D1C83D09100037955 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F3B5747E1C83D09100037955 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F3B574851C8422E800037955 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F3C1865B1C410B010045E19F /* GoodActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodActivityTableViewCell.h; sourceTree = "<group>"; };
 		F3C1865C1C410B010045E19F /* GoodActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodActivityTableViewCell.m; sourceTree = "<group>"; };
 		F3C1865D1C410B010045E19F /* GoodActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodActivityTableViewCell.xib; sourceTree = "<group>"; };
@@ -213,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B574861C8422E800037955 /* CoreLocation.framework in Frameworks */,
 				F3C7FC371C47288F00AA8C37 /* libc++.tbd in Frameworks */,
 				F3A154551C46510800C03829 /* libz.tbd in Frameworks */,
 				F3A154471C46503000C03829 /* SystemConfiguration.framework in Frameworks */,
@@ -247,6 +255,7 @@
 		A2F928359BDDC598F5BFF9C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3B574851C8422E800037955 /* CoreLocation.framework */,
 				F3C7FC361C47288F00AA8C37 /* libc++.tbd */,
 				F3A154561C46511900C03829 /* libsqlite3.tbd */,
 				F3A154541C46510800C03829 /* libz.tbd */,
@@ -510,6 +519,8 @@
 				F3CDFE371C3A4DC600ECDA7C /* MineViewController.m */,
 				F3C7FC3B1C474DE800AA8C37 /* ShareViewController.h */,
 				F3C7FC3C1C474DE800AA8C37 /* ShareViewController.m */,
+				F3B5747D1C83D09100037955 /* LoginViewController.h */,
+				F3B5747E1C83D09100037955 /* LoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -525,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				F3CDFE431C3A509300ECDA7C /* Mine.storyboard */,
+				F3B5747B1C83D06800037955 /* Login.storyboard */,
 				F3C7FC381C47386200AA8C37 /* ShareView.h */,
 				F3C7FC391C47386200AA8C37 /* ShareView.m */,
 			);
@@ -642,6 +654,7 @@
 				F3F7DFD91C3FC2270077546A /* good.plist in Resources */,
 				F30BC2A41C3F5D5800B24E57 /* ActivityTheme.plist in Resources */,
 				F3F5441A1C3FA0C600B0C1E8 /* blueArrowDown.png in Resources */,
+				F3B5747C1C83D06800037955 /* Login.storyboard in Resources */,
 				F3FBF8681C43A86600D92381 /* typeid23.plist in Resources */,
 				F3E7982D1C449EFB0073AF14 /* ProgressHUD.bundle in Resources */,
 				F3F35DF51C47CD5200A54519 /* Best周末.jpg in Resources */,
@@ -740,6 +753,7 @@
 				F3C7FC3A1C47386200AA8C37 /* ShareView.m in Sources */,
 				F3F5441B1C3FA0C600B0C1E8 /* PullingRefreshTableView.m in Sources */,
 				F3CDFDDF1C3A1C3200ECDA7C /* main.m in Sources */,
+				F3B5747F1C83D09100037955 /* LoginViewController.m in Sources */,
 				F39F3BAE1C423423008BA3B9 /* HotThemeTableViewCell.m in Sources */,
 				F3E7982E1C449EFB0073AF14 /* ProgressHUD.m in Sources */,
 				F39F3BB21C4235BA008BA3B9 /* HotThemeModel.m in Sources */,
@@ -854,6 +868,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/最美周末/Library/Bmob_SDK_iOS_v1.6.6",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/qipeng/Desktop/最美周末/最美周末/Library/tools/Main.pch";
 				INFOPLIST_FILE = "最美周末/Info.plist";
@@ -878,6 +896,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/最美周末/Library/Bmob_SDK_iOS_v1.6.6",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/qipeng/Desktop/最美周末/最美周末/Library/tools/Main.pch";
 				INFOPLIST_FILE = "最美周末/Info.plist";

@@ -91,13 +91,13 @@
         }
             break;
         case 2:
-        {//
+        {//分享给好友
             [self share];
             
         }
             break;
         case 3:
-        {//评分
+        {//给我评分
             NSString *str = [NSString stringWithFormat: @"itms-apps://itunes.apple.com/app"];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }

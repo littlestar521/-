@@ -136,7 +136,8 @@
 //选择城市
 - (void)selectCityAction:(UIBarButtonItem *)btn{
     SelectCityViewController *selectCityVC = [[SelectCityViewController alloc]init];
-    [self.navigationController presentViewController:selectCityVC animated:YES completion:nil];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:selectCityVC];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 
 }
 //搜索关键字
