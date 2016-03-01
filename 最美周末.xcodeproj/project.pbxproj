@@ -881,6 +881,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/最美周末/Library/libWeiboSDK",
 					"$(PROJECT_DIR)/最美周末/Library/libWeiboSDK/SDKExport",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "can.Mangoinc.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -909,6 +910,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/最美周末/Library/libWeiboSDK",
 					"$(PROJECT_DIR)/最美周末/Library/libWeiboSDK/SDKExport",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "can.Mangoinc.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
